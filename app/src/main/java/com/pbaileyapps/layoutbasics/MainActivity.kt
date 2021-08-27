@@ -8,7 +8,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.pbaileyapps.layoutbasics.ui.AndroidCafe
 import com.pbaileyapps.layoutbasics.ui.box.BoxLayout
 import com.pbaileyapps.layoutbasics.ui.column.ColumnLayout
-import com.pbaileyapps.layoutbasics.ui.constraint.ConstraintLayout
+import com.pbaileyapps.layoutbasics.ui.constraint.ConstraintLayouts
 import com.pbaileyapps.layoutbasics.ui.row.RowLayout
 import com.pbaileyapps.layoutbasics.ui.theme.LayoutBasicsTheme
 
@@ -52,7 +52,7 @@ fun RowLayoutPreview() {
 @Composable
 fun ConstraintLayoutPreview() {
     LayoutBasicsTheme(darkTheme = true) {
-        ConstraintLayout()
+        ConstraintLayouts()
     }
 }
 
