@@ -43,40 +43,36 @@ fun AndroidCafe() {
 }
 
 @Composable
-private fun CustomRow(name: String, price: String, painter: Painter) {
-
-    Card(
+fun CustomRow(name:String,cost:String,painter: Painter){
+    Row(
         modifier = Modifier
-            .fillMaxWidth()
             .padding(12.dp)
-            .clip(RoundedCornerShape(8.dp)),
+            .clip(RoundedCornerShape(8.dp))
+            .background(MaterialTheme.colors.surface)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Row(
+        Image(
+            painter = painter, contentDescription = "Yummy",
             modifier = Modifier
-                .padding(12.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painter, contentDescription = "Yummy",
-                modifier = Modifier
-                    .size(72.dp)
-                    .clip(RoundedCornerShape(8.dp))
-            )
+                .padding(start=20.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .size(72.dp)
 
-            Column(){
+        )
+        Column(){
             Text(
                 text = name,
                 style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(start = 20.dp)
             )
             Text(
-                text = price,
+                text = cost,
                 style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(start = 20.dp)
             )
         }
-        }
+
     }
 }
 
