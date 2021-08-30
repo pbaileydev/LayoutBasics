@@ -28,11 +28,21 @@ fun RowLayout() {
                 )
             }
         ) {
-            Column(
-                modifier = Modifier.fillMaxSize()
-            ) {
-
-            }
+            Row(
+    modifier = Modifier.fillMaxWidth().padding(8.dp),
+    verticalAlignment = Alignment.CenterVertically
+) {
+    Text(
+        text = "Pizza",
+        style = MaterialTheme.typography.h4,
+        modifier = Modifier.padding(start = 20.dp)
+    )
+    Text(
+        text = "$5",
+        style = MaterialTheme.typography.h6,
+        modifier = Modifier.padding(start = 20.dp)
+    )
+}
         }
     }
 }
