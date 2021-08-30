@@ -32,8 +32,16 @@ fun ColumnLayout() {
             modifier = Modifier.fillMaxSize().background(black),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Pizza",color=white)
-            Text("$5",color= white)
+            Text(
+        text = "Pizza",
+        style = MaterialTheme.typography.h4,
+        
+    )
+    Text(
+        text = "$5",
+        style = MaterialTheme.typography.h6,
+        
+    )
         }
         }
     }
