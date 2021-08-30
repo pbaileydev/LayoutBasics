@@ -29,19 +29,26 @@ fun ColumnLayout() {
             }
         ) {
             Column(
-            modifier = Modifier.fillMaxSize().background(black),
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colors.surface),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-        text = "Pizza",
-        style = MaterialTheme.typography.h4,
-        
-    )
-    Text(
-        text = "$5",
-        style = MaterialTheme.typography.h6,
-        
-    )
+                text = "Column Layout",
+                style = MaterialTheme.typography.h4,
+                color = MaterialTheme.colors.primary
+            )
+            Text(
+                text = "Pizza",
+                style = MaterialTheme.typography.h6,
+                color = MaterialTheme.colors.primary
+            )
+            Text(
+                text = "$5",
+                style = MaterialTheme.typography.h6,
+                color = MaterialTheme.colors.primary
+            )
         }
         }
     }
