@@ -33,17 +33,17 @@ fun AndroidCafe() {
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
-                CustomRow("Pizza", painterResource(id = R.drawable.pizza))
-                CustomRow("Coffee", painterResource(id = R.drawable.coffee))
-                CustomRow("Salad", painterResource(id = R.drawable.salad))
-                CustomRow("Ice Cream", painterResource(id = R.drawable.ice_cream))
+                CustomRow(name = "Pizza","$5", painter = painterResource(id = R.drawable.pizza))
+                CustomRow(name = "Coffee","$1", painter = painterResource(id = R.drawable.coffee))
+                CustomRow(name = "Salad","$2", painter = painterResource(id = R.drawable.salad))
+                CustomRow(name = "Ice Cream","$.63", painter = painterResource(id = R.drawable.ice_cream))
             }
         }
     }
 }
 
 @Composable
-private fun CustomRow(name: String, painter: Painter) {
+private fun CustomRow(name: String, price: String, painter: Painter) {
 
     Card(
         modifier = Modifier
@@ -64,11 +64,18 @@ private fun CustomRow(name: String, painter: Painter) {
                     .clip(RoundedCornerShape(8.dp))
             )
 
+            Column(){
             Text(
                 text = name,
                 style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(start = 20.dp)
             )
+            Text(
+                text = price,
+                style = MaterialTheme.typography.h4,
+                modifier = Modifier.padding(start = 20.dp)
+            )
+        }
         }
     }
 }
