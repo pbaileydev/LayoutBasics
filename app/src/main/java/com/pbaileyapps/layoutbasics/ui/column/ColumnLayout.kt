@@ -29,10 +29,12 @@ fun ColumnLayout() {
             }
         ) {
             Column(
-                modifier = Modifier.fillMaxSize()
-            ) {
-
-            }
+            modifier = Modifier.fillMaxSize().background(black),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Pizza",color=white)
+            Text("$5",color= white)
+        }
         }
     }
 }
