@@ -28,11 +28,21 @@ fun BoxLayout() {
                 )
             }
         ) {
-            Column(
-                modifier = Modifier.fillMaxSize()
-            ) {
+            Box(modifier = Modifier
+        .fillMaxWidth()
+        .height(140.dp).background(MaterialTheme.colors.background)) {
 
-            }
+        Text(text = "Top Start", modifier = Modifier.align(Alignment.TopStart),color = Color.White)
+        Text(text = "Top Center", modifier = Modifier.align(Alignment.TopCenter),color = Color.White)
+        Text(text = "Top End", modifier = Modifier.align(Alignment.TopEnd),color = Color.White)
+        Text(text = "Center Start", modifier = Modifier.align(Alignment.CenterStart),color = Color.White)
+        Text(text = "Center", modifier = Modifier.align(Alignment.Center),color = Color.White)
+        Text(text = "Center End", modifier = Modifier.align(Alignment.CenterEnd),color = Color.White)
+        Text(text = "Bottom Start", modifier = Modifier.align(Alignment.BottomStart),color = Color.White)
+        Text(text = "Bottom Center", modifier = Modifier.align(Alignment.BottomCenter),color = Color.White)
+        Text(text = "Bottom End", modifier = Modifier.align(Alignment.BottomEnd),color = Color.White)
+
+    }
         }
     }
 }
