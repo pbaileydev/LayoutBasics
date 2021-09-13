@@ -33,17 +33,25 @@ fun AndroidCafe() {
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
-                CustomRow(name = "Pizza","$5", painter = painterResource(id = R.drawable.pizza))
-                CustomRow(name = "Coffee","$1", painter = painterResource(id = R.drawable.coffee))
-                CustomRow(name = "Salad","$2", painter = painterResource(id = R.drawable.salad))
-                CustomRow(name = "Ice Cream","$.63", painter = painterResource(id = R.drawable.ice_cream))
+                CustomRow(name = "Pizza","$5", painter = painterResource(id = R.drawable.pizza),icon = painterResource(
+                    id = R.drawable.ic_baseline_outdoor_grill_24)
+                )
+                CustomRow(name = "Coffee","$1", painter = painterResource(id = R.drawable.coffee),icon = painterResource(
+                    id = R.drawable.ic_baseline_check_box_24
+                ))
+                CustomRow(name = "Salad","$2", painter = painterResource(id = R.drawable.salad), icon = painterResource(
+                    id = R.drawable.ic_baseline_grass_24
+                ))
+                CustomRow(name = "Ice Cream","$.63",
+                    painter = painterResource(id = R.drawable.ice_cream),
+                icon=painterResource(id = R.drawable.ic_twotone_cookie_24))
             }
         }
     }
 }
 
 @Composable
-fun CustomRow(name:String,cost:String,painter: Painter){
+fun CustomRow(name:String,cost:String,painter: Painter,icon: Painter){
     Row(
         modifier = Modifier
             .padding(12.dp)
@@ -52,14 +60,21 @@ fun CustomRow(name:String,cost:String,painter: Painter){
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Image(
-            painter = painter, contentDescription = "Yummy",
-            modifier = Modifier
-                .padding(start=20.dp)
-                .clip(RoundedCornerShape(8.dp))
-                .size(72.dp)
-
-        )
+        Box(modifier = Modifier
+            .padding(start = 20.dp)
+            .clip(RoundedCornerShape(8.dp))
+            .size(72.dp)) {
+            Image(
+                modifier = Modifier.fillMaxSize(1f),
+                painter = painter, contentDescription = "Food",
+            )
+            Image(
+                modifier = Modifier
+                    .size(20.dp)
+                    .align(Alignment.BottomEnd),
+                painter = icon, contentDescription = "icon"
+            )
+        }
         Column(){
             Text(
                 text = name,
@@ -75,7 +90,6 @@ fun CustomRow(name:String,cost:String,painter: Painter){
 
     }
 }
-
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun DefaultPreviewDark() {
