@@ -3,22 +3,26 @@ package com.pbaileyapps.layoutbasics
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.pbaileyapps.layoutbasics.ui.AndroidCafe
 import com.pbaileyapps.layoutbasics.ui.box.BoxLayout
 import com.pbaileyapps.layoutbasics.ui.column.ColumnLayout
 import com.pbaileyapps.layoutbasics.ui.constraint.ConstraintLayouts
+import com.pbaileyapps.layoutbasics.ui.listToDetail.CatsNavigation
 import com.pbaileyapps.layoutbasics.ui.row.RowLayout
 import com.pbaileyapps.layoutbasics.ui.theme.LayoutBasicsTheme
 
+@ExperimentalAnimationApi
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             LayoutBasicsTheme {
-                AndroidCafe()
+                //AndroidCafe()
+                CatsNavigation()
             }
         }
     }
