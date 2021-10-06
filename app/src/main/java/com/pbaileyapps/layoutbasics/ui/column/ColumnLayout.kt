@@ -1,5 +1,6 @@
 package com.pbaileyapps.layoutbasics.ui.column
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -8,6 +9,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,27 +31,27 @@ fun ColumnLayout() {
             }
         ) {
             Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colors.surface),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = "Column Layout",
-                style = MaterialTheme.typography.h4,
-                color = MaterialTheme.colors.primary
-            )
-            Text(
-                text = "Pizza",
-                style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.primary
-            )
-            Text(
-                text = "$5",
-                style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.primary
-            )
-        }
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colors.surface),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Column Layout",
+                    style = MaterialTheme.typography.h4,
+                    color = MaterialTheme.colors.primary
+                )
+                Text(
+                    text = "Pizza",
+                    style = MaterialTheme.typography.h6,
+                    color = MaterialTheme.colors.primary
+                )
+                Text(
+                    text = "$5",
+                    style = MaterialTheme.typography.h6,
+                    color = MaterialTheme.colors.primary
+                )
+            }
         }
     }
 }

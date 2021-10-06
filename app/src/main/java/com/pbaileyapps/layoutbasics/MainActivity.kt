@@ -4,17 +4,19 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.pbaileyapps.layoutbasics.ui.AndroidCafe
+import com.pbaileyapps.layoutbasics.ui.bottomNav.BottomNavigationView
 import com.pbaileyapps.layoutbasics.ui.box.BoxLayout
 import com.pbaileyapps.layoutbasics.ui.column.ColumnLayout
 import com.pbaileyapps.layoutbasics.ui.constraint.ConstraintLayouts
-import com.pbaileyapps.layoutbasics.ui.listToDetail.CatsNavigation
 import com.pbaileyapps.layoutbasics.ui.row.RowLayout
 import com.pbaileyapps.layoutbasics.ui.theme.LayoutBasicsTheme
 
 @ExperimentalAnimationApi
+@ExperimentalFoundationApi
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             LayoutBasicsTheme {
                 //AndroidCafe()
-                CatsNavigation()
+                //CatsNavigation()
+                BottomNavigationView()
             }
         }
     }
@@ -65,5 +68,14 @@ fun ConstraintLayoutPreview() {
 fun BoxLayoutPreview() {
     LayoutBasicsTheme(darkTheme = true) {
         BoxLayout()
+    }
+}
+
+@ExperimentalFoundationApi
+@Preview(widthDp = 360, heightDp = 640)
+@Composable
+fun BottomNavViewPreview() {
+    LayoutBasicsTheme(darkTheme = true) {
+        BottomNavigationView()
     }
 }
