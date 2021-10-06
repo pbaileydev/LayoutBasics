@@ -1,6 +1,7 @@
 package com.pbaileyapps.layoutbasics.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -33,25 +34,42 @@ fun AndroidCafe() {
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
-                CustomRow(name = "Pizza","$5", painter = painterResource(id = R.drawable.pizza),icon = painterResource(
-                    id = R.drawable.ic_baseline_outdoor_grill_24)
+                CustomRow(
+                    name = "Pizza",
+                    "$5",
+                    painter = painterResource(id = R.drawable.pizza),
+                    icon = painterResource(
+                        id = R.drawable.pizza
+                    )
                 )
-                CustomRow(name = "Coffee","$1", painter = painterResource(id = R.drawable.coffee),icon = painterResource(
-                    id = R.drawable.ic_baseline_check_box_24
-                ))
-                CustomRow(name = "Salad","$2", painter = painterResource(id = R.drawable.salad), icon = painterResource(
-                    id = R.drawable.ic_baseline_grass_24
-                ))
-                CustomRow(name = "Ice Cream","$.63",
+                CustomRow(
+                    name = "Coffee",
+                    "$1",
+                    painter = painterResource(id = R.drawable.coffee),
+                    icon = painterResource(
+                        id = R.drawable.coffee
+                    )
+                )
+                CustomRow(
+                    name = "Salad",
+                    "$2",
+                    painter = painterResource(id = R.drawable.salad),
+                    icon = painterResource(
+                        id = R.drawable.salad
+                    )
+                )
+                CustomRow(
+                    name = "Ice Cream", "$.63",
                     painter = painterResource(id = R.drawable.ice_cream),
-                icon=painterResource(id = R.drawable.ic_twotone_cookie_24))
+                    icon = painterResource(id = R.drawable.ice_cream)
+                )
             }
         }
     }
 }
 
 @Composable
-fun CustomRow(name:String,cost:String,painter: Painter,icon: Painter){
+fun CustomRow(name: String, cost: String, painter: Painter, icon: Painter) {
     Row(
         modifier = Modifier
             .padding(12.dp)
@@ -60,10 +78,12 @@ fun CustomRow(name:String,cost:String,painter: Painter,icon: Painter){
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Box(modifier = Modifier
-            .padding(start = 20.dp)
-            .clip(RoundedCornerShape(8.dp))
-            .size(72.dp)) {
+        Box(
+            modifier = Modifier
+                .padding(start = 20.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .size(72.dp)
+        ) {
             Image(
                 modifier = Modifier.fillMaxSize(1f),
                 painter = painter, contentDescription = "Food",
@@ -75,7 +95,7 @@ fun CustomRow(name:String,cost:String,painter: Painter,icon: Painter){
                 painter = icon, contentDescription = "icon"
             )
         }
-        Column(){
+        Column {
             Text(
                 text = name,
                 style = MaterialTheme.typography.h4,
@@ -90,6 +110,7 @@ fun CustomRow(name:String,cost:String,painter: Painter,icon: Painter){
 
     }
 }
+
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun DefaultPreviewDark() {
