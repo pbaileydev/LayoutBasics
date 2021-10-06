@@ -3,9 +3,9 @@ package com.pbaileyapps.layoutbasics.ui.bottomNav
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -21,20 +21,24 @@ import com.pbaileyapps.layoutbasics.ui.theme.LayoutBasicsTheme
 @Composable
 fun BottomNavigationView() {
 
+    val navController = rememberNavController()
+
     Scaffold(
         topBar = {
             TopAppBar(
-                { SearchBar() }, backgroundColor = Color.Transparent
+                { SearchBar() },
+                backgroundColor = MaterialTheme.colors.background,
+                elevation = 0.dp
             )
-        }, bottomBar = { BottomNavigationBar() }
+        }, bottomBar = { BottomNavigationBar(navController) }
     ) {
-        NavigationHost()
+        NavigationHost(navController)
     }
 }
 
 @Composable
 fun BottomNavigationBar(
-    navController: NavController = rememberNavController(),
+    navController: NavController,
     items: List<BottomNavItems> = navItems
 ) {
 
@@ -67,7 +71,9 @@ fun BottomNavigationBar(
                             saveState = true
                         }
                     }
-                }
+                },
+                selectedContentColor = MaterialTheme.colors.secondaryVariant,
+                unselectedContentColor = MaterialTheme.colors.primaryVariant
             )
         }
     }
@@ -76,7 +82,7 @@ fun BottomNavigationBar(
 @ExperimentalFoundationApi
 @Composable
 fun NavigationHost(
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController
 ) {
     NavHost(
         navController = navController,
@@ -101,6 +107,6 @@ fun NavigationHost(
 @Composable
 fun BottomNavViewPreview() {
     LayoutBasicsTheme(darkTheme = true) {
-        BottomNavigationBar()
+        BottomNavigationBar(rememberNavController())
     }
 }

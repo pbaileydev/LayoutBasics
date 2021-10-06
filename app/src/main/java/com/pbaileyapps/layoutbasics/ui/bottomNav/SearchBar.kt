@@ -24,8 +24,8 @@ fun SearchBar() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .padding(top = 8.dp, start = 4.dp, end = 4.dp)
             .fillMaxWidth()
+            .padding(top = 8.dp, start = 4.dp, end = 16.dp)
             .height(56.dp)
             .background(
                 color = MaterialTheme.colors.surface,

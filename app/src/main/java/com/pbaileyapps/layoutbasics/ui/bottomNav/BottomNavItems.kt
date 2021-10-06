@@ -9,7 +9,7 @@ sealed class BottomNavItems(
 ) {
     object Contacts : BottomNavItems("contacts", "Contacts", R.drawable.contacts)
     object Recent : BottomNavItems("recent", "Recent", R.drawable.recent)
-    object Favorites : BottomNavItems("account", "Favorites", R.drawable.account)
+    object Favorites : BottomNavItems("account", "Favorites", R.drawable.favorite)
 }
 
 val navItems = listOf(
